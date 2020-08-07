@@ -1,10 +1,10 @@
 # number_trivia
 
-A new Flutter project.
+An app for getting interesting facts about numbers - a Number Trivia App!.
 
-## Getting Started
+## Architecture
 
-This project is a starting point for a Flutter application.
+Every "feature" of the app, like getting some interesting trivia about a number, is divided into 3 layers - presentation, domain and data. The app have only one feature.
 
 A few resources to get you started if this is your first Flutter project:
 
