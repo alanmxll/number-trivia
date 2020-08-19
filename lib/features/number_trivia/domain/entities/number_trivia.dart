@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 class NumberTrivia extends Equatable {
   final String text;
@@ -8,5 +8,8 @@ class NumberTrivia extends Equatable {
   NumberTrivia({
     @required this.text,
     @required this.number,
-  }) : super([text, number]);
+  });
+
+  @override
+  List<Object> get props => [text, number];
 }

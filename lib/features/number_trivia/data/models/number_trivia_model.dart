@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
+import 'package:meta/meta.dart';
+
+import '../../domain/entities/number_trivia.dart';
 
 class NumberTriviaModel extends NumberTrivia {
   NumberTriviaModel({
@@ -15,6 +16,9 @@ class NumberTriviaModel extends NumberTrivia {
   }
 
   Map<String, dynamic> toJson() {
-    return {'text': text, 'number': number};
+    return {
+      'text': text,
+      'number': number,
+    };
   }
 }

@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failures.dart';
 import '../../../../core/network/network_info.dart';
 import '../../domain/entities/number_trivia.dart';
-import '../../domain/repositories/number_trivia_respository.dart';
+import '../../domain/repositories/number_trivia_repository.dart';
 import '../datasources/number_trivia_local_data_source.dart';
 import '../datasources/number_trivia_remote_data_source.dart';
 
@@ -26,13 +26,16 @@ class NumberTriviaRepositoryImpl implements NumberTriviaRepository {
   Future<Either<Failure, NumberTrivia>> getConcreteNumberTrivia(
     int number,
   ) async {
-    return await _getTrivia(
-        () => remoteDataSource.getConcreteNumberTrivia(number));
+    return await _getTrivia(() {
+      return remoteDataSource.getConcreteNumberTrivia(number);
+    });
   }
 
   @override
   Future<Either<Failure, NumberTrivia>> getRandomNumberTrivia() async {
-    return await _getTrivia(() => remoteDataSource.getRandomNumberTrivia());
+    return await _getTrivia(() {
+      return remoteDataSource.getRandomNumberTrivia();
+    });
   }
 
   Future<Either<Failure, NumberTrivia>> _getTrivia(
