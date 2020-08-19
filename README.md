@@ -1,5 +1,7 @@
 # TDD Clean Architecture for Flutter
 
+## An app for getting interesting facts about numbers - a Number Trivia App!
+## API - http://numbersapi.com/#42
 
 <br />
 
